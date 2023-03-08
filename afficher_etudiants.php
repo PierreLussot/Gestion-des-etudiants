@@ -22,28 +22,26 @@ $rs =  mysqli_query($connexion, $req);
             <th>code</th>
             <th>email</th>
             <th>photo</th>
+            <th></th>
+            <th></th>
+
 
         </tr>
 
         <?php while ($et = mysqli_fetch_assoc($rs)) :
-            echo "<pre>";
-            print_r($et);
-            echo "</pre>";
+
         ?>
             <tr>
                 <td><?= $et['nom'] ?></td>
                 <td><?= $et['email'] ?></td>
                 <td> <img src="images/<?= $et['photo'] ?>" alt=""> </td>
+                <td> <a href="supprimer_etudiant.php?id=<?= $et['id'] ?>">Supprimer</a> </td>
+                <td>Editer</td>
+
             </tr>
         <?php endwhile ?>
 
 
-
-
-        <tr>
-            <td>Photo</td>
-            <td> <img src="images/<?= $nom_photo  ?>" alt=""> </td>
-        </tr>
     </table>
 </body>
 

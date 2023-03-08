@@ -9,6 +9,9 @@ move_uploaded_file($nom_photo_temporaire, "images/$nom_photo");
 
 $req = "INSERT INTO etudiants(nom,email,photo) VALUES('$nom','$email','$nom_photo')";
 mysqli_query($connexion, $req);
+
+header('Location: afficher_etudiants.php');
+
 ?>
 
 <!DOCTYPE html>
