@@ -1,7 +1,10 @@
 <?php
 require 'connexion_bdd.php';
-
-$req = "SELECT * FROM etudiants";
+$mc = null;
+if (isset($_POST['motCle'])) {
+    $mc = $_POST['motCle'];
+}
+$req = "SELECT * FROM etudiants WHERE nom LIKE '%$mc%'";
 $rs =  mysqli_query($connexion, $req);
 
 ?>
@@ -17,6 +20,12 @@ $rs =  mysqli_query($connexion, $req);
 </head>
 
 <body>
+    <form method="POST" action="chercher_etudiant.php">
+
+        Mot clé : <input type="text" name="motCle">
+        <input type="submit" value="Cherhcer">
+    </form>
+
     <table border="1">
         <tr>
             <th>Nom</th>
