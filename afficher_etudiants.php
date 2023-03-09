@@ -36,7 +36,7 @@ $rs =  mysqli_query($connexion, $req);
                 <td><?= $et['email'] ?></td>
                 <td> <img src="images/<?= $et['photo'] ?>" alt=""> </td>
                 <td> <a href="supprimer_etudiant.php?id=<?= $et['id'] ?>">Supprimer</a> </td>
-                <td>Editer</td>
+                <td> <a href="edit_etudiant.php?id=<?= $et['id'] ?>">Editer</a> </td>
 
             </tr>
         <?php endwhile ?>
