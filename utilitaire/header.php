@@ -25,14 +25,16 @@ require 'connexion_bdd.php';
             </button>
             <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link " href="saisie_etudiant.php">Ajouter</a>
+                    <?php if (isset($_SESSION['niv']) AND $_SESSION['niv'] == 0) : ?>
+                        <a class="nav-link " href="saisie_etudiant.php">Ajouter</a>
+                    <?php endif ?>
                     <a class="nav-link" href="afficher_etudiants.php">Liste</a>
                 </div>
             </div>
 
             <?php if (isset($_SESSION['niv'])) : ?>
-                <form method="POST" class="d-flex me-3"  action="afficher_etudiants.php">
-                    <input class="form-control me-2" type="search" name="motCle" placeholder="Rechercher" >
+                <form method="POST" class="d-flex me-3" action="afficher_etudiants.php">
+                    <input class="form-control me-2" type="search" name="motCle" placeholder="Rechercher">
                     <button class="btn btn-outline-success" name="chercher" type="submit">Chercher</button>
                 </form>
                 <button class="btn btn-danger d-flex "><a class="nav-link" href="deconnexion.php">Deconnexion</a></button>

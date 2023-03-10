@@ -1,6 +1,8 @@
 <?php
 require 'verification_session.php';
 
+
+
 $titre = "Liste des etudiants";
 require 'utilitaire/header.php';
 require 'connexion_bdd.php';

@@ -1,6 +1,8 @@
 <?php
 require 'connexion_bdd.php';
 
+
+
 $nom = $_POST['nom'];
 $email = $_POST['email'];
 $nom_photo = $_FILES['photo']['name'];
@@ -14,7 +16,7 @@ header('Location: afficher_etudiants.php');
 
 ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -41,4 +43,4 @@ header('Location: afficher_etudiants.php');
     </table>
 </body>
 
-</html>
+</html> -->

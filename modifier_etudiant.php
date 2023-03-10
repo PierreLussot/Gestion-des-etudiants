@@ -1,5 +1,7 @@
 <?php
 require 'connexion_bdd.php';
+require 'verification_session.php';
+require 'verification_session_2.php';
 $getid = $_GET['id'];
 
 $nom = $_POST['nom'];

@@ -1,5 +1,10 @@
 <?php
 require 'verification_session.php';
+require 'verification_session_2.php';
+
+
+
+
 $titre = "Saisi des etudiants";
 require 'utilitaire/header.php';
 
