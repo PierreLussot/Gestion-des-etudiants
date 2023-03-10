@@ -23,7 +23,7 @@ $rs =  mysqli_query($connexion, $req);
     <form method="POST" action="chercher_etudiant.php">
 
         Mot clé : <input type="text" name="motCle">
-        <input type="submit" value="Cherhcer">
+        <input type="submit" value="Chercher">
     </form>
 
     <table border="1">

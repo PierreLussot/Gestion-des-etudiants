@@ -1,3 +1,8 @@
+<?php
+require 'connexion_bdd.php';
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,11 +23,19 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link " href="saisie_etudiant.php">Ajouter</a>
                     <a class="nav-link" href="afficher_etudiants.php">Liste</a>
                 </div>
             </div>
+
+            <?php if (isset($_SESSION['niv'])) : ?>
+                <form method="POST" class="d-flex me-3"  action="afficher_etudiants.php">
+                    <input class="form-control me-2" type="search" name="motCle" placeholder="Rechercher" >
+                    <button class="btn btn-outline-success" name="chercher" type="submit">Chercher</button>
+                </form>
+                <button class="btn btn-danger d-flex "><a class="nav-link" href="deconnexion.php">Deconnexion</a></button>
+            <?php endif ?>
         </div>
     </nav>

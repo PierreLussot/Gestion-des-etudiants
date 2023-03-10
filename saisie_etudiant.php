@@ -1,11 +1,12 @@
 <?php
+require 'verification_session.php';
 $titre = "Saisi des etudiants";
 require 'utilitaire/header.php';
 
 ?>
 <div class="">
   <div class="d-flex flex-row justify-content-center mt-5">
-    <form action="ajouteSr_etudiant.php" method="POST" enctype="multipart/form-data">
+    <form action="ajouter_etudiant.php" method="POST" enctype="multipart/form-data">
       <form class="mb-3">
         <div class="mb-3">
           <label class="form-label">Nom</label>

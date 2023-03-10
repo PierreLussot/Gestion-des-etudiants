@@ -15,12 +15,7 @@ require 'utilitaire/header.php';
                 <input type="password" name="mdp" class="form-control">
             </div>
 
-            <div class="mb-3">
-                <label class="form-label">Photo</label>
-                <input type="file" name="photo" class="form-control">
-            </div>
-
-            <button type="submit" name="enregistrer" class="btn btn-primary">Enregister</button>
+            <button type="submit" name="valider" class="btn btn-primary">Enregister</button>
         </form>
 </div>
 <?php
