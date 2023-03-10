@@ -1,8 +1,10 @@
 body {
-  background-color: brown;
+  background-color: rgb(228, 216, 216);
 }
 
-table {
-  border: 1px;
-  width: 80%;
+img {
+  width: 50px;
+}
+.form-control {
+  width: 350px;
 }

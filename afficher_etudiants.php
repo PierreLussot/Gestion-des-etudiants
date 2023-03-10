@@ -1,48 +1,37 @@
 <?php
+$titre = "Liste des etudiants";
+require 'utilitaire/header.php';
 require 'connexion_bdd.php';
+
 
 $req = "SELECT * FROM etudiants";
 $rs =  mysqli_query($connexion, $req);
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste des etudiants</title>
-    <link rel="style.css" href="">
-</head>
+<div class="d-flex flex-row justify-content-evenly flex-wrap mt-3 ">
+    <?php while ($et = mysqli_fetch_assoc($rs)) : ?>
 
-<body>
-    <table border="1">
-        <tr>
-            <th>Nom</th>
-            <th>Email</th>
-            <th>Photo</th>
-            <th></th>
-            <th></th>
+        <div class="card my-3" style="width: 18rem;">
+            <img src="images/<?= $et['photo'] ?>" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><?= $et['nom'] ?> </h5>
+                <p class="card-text"><?= $et['email'] ?></p>
+                <a href="supprimer_etudiant.php?id=<?= $et['id'] ?>" class="btn btn-danger">Supprimer</a>
+                <a href="edit_etudiant.php?id=<?= $et['id'] ?>" class="btn btn-warning">Modifier</a>
+            </div>
+        </div>
+
+    <?php endwhile ?>
+</div>
 
 
-        </tr>
-
-        <?php while ($et = mysqli_fetch_assoc($rs)) :
-
-        ?>
-            <tr>
-                <td><?= $et['nom'] ?></td>
-                <td><?= $et['email'] ?></td>
-                <td> <img src="images/<?= $et['photo'] ?>" alt=""> </td>
-                <td> <a href="supprimer_etudiant.php?id=<?= $et['id'] ?>">Supprimer</a> </td>
-                <td> <a href="edit_etudiant.php?id=<?= $et['id'] ?>">Editer</a> </td>
-
-            </tr>
-        <?php endwhile ?>
 
 
-    </table>
+
+
+
 </body>
+<?php require 'utilitaire/footer.php'; ?>
 
 </html>
