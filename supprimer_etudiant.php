@@ -5,3 +5,4 @@ $req = "DELETE FROM etudiants WHERE  id = $getid";
 mysqli_query($connexion, $req);
 
 header('Location: afficher_etudiants.php');
+
